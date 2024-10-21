@@ -12,9 +12,9 @@ types = [type(hello), type(first_name), type(last_name), type(age)]
 
 print("Список типів змінних:", types)
 
-if all(t == types[3] for t in types):
+if all(t == types[0] for t in types):
     print("good")
 else:
-    first_type = types[3]
+    first_type = types[0]
     types = [t for t in types if t == first_type]
     print("Типи після видалення відмінних:", types)
