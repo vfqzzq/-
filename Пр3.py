@@ -1,5 +1,6 @@
 def remove_duplicates(input_list):
-    return list(dict.fromkeys(input_list))
+    unique_list = list(set(input_list))
+    return unique_list
 
 input_list = [1, 2, 3, 4, 5, 6, 3, 4, 5, 7, 6, 5, 4, 3, 4, 5, 4, 3, 'Привіт', 'анаконда']
 
@@ -8,7 +9,7 @@ def sort_list(input_list):
     strings = [x for x in input_list if isinstance(x, str)]
 
     numbers.sort()
-    strings.sort(key=lambda x: x.lower())  
+    strings.sort(key=lambda x: x.lower())
     return numbers + strings
 
 unique_list = remove_duplicates(input_list)
