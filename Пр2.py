@@ -3,18 +3,18 @@ first_name = "Vika"
 last_name = "Tykhonchuk"
 age = 16
 
-print(hello, "-", type(hello))
-print(first_name, "-", type(first_name))
-print(last_name, "-", type(last_name))
-print(age, "-", type(age))
+types_list = [type(hello), type(first_name), type(last_name), type(age)]
 
-types = [type(hello), type(first_name), type(last_name), type(age)]
+print("Типи змінних:", types_list)
 
-print("Список типів змінних:", types)
-
-if all(t == types[0] for t in types):
+#all() перевіряє, чи всі елементи у types_list однакові.
+#types_list[0] використовується як базовий тип для порівняння, тобто всі інші елементи в types_list повинні відповідати першому типу (<class 'str'>).
+#Якщо всі типи однакові, виводиться good.
+if all(elem == types_list[0] for elem in types_list):
     print("good")
+
 else:
-    first_type = types[0]
-    types = [t for t in types if t == first_type]
-    print("Типи після видалення відмінних:", types)
+
+    unique_type = types_list[0]
+    types_list = [t for t in types_list if t == unique_type]
+    print("Після видалення відмінного типу:", types_list)
