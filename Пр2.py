@@ -1,20 +1,56 @@
-hello = "Hello Word"
-first_name = "Vika"
-last_name = "Tykhonchuk"
-age = 16
+name ="Viktoria"              #створюєм дані
+surname ="Tikhonchuk"
+age =16
 
-types_list = [type(hello), type(first_name), type(last_name), type(age)]
+print(name)
+print(surname) #Вивід в консоль
+print(age)
 
-print("Типи змінних:", types_list)
+print(type(name))
+print(type(surname))    #Визначеня типу
+print(type(age))
 
-#all() перевіряє, чи всі елементи у types_list однакові.
-#types_list[0] використовується як базовий тип для порівняння, тобто всі інші елементи в types_list повинні відповідати першому типу (<class 'str'>).
-#Якщо всі типи однакові, виводиться good.
-if all(elem == types_list[0] for elem in types_list):
-    print("good")
 
-else:
+count_int = 0
+count_str = 0
+count_float = 0
+count_set = 0
+count_tuple = 0
+count_bool = 0
+count_list = 0
+count_notnull = []
+max_value = 0
+lst_notnull = []
+lst_count_types = [count_list, count_bool, count_set, count_float, count_tuple, count_str, count_int]
+lst = [name, surname, age]
+lst_name_type = [int, str, str, int, str, str]
+for item in lst:
+    if type(item) == int:
+        lst_count_types[-1] +=1
+    elif type(item) == str:
+        lst_count_types[-2] +=1
+    elif type(item) == tuple:
+        lst_count_types[-3] +=1
+    elif type(item) == float:
+        lst_count_types[-4] +=1
+    elif type(item) == set:
+        lst_count_types[-5] +=1
+    elif type(item) == bool:
+        lst_count_types[-6] +=1
+    elif type(item) == list:
+        lst_count_types[-7] +=1
+for item in lst_count_types:
+    if item !=0:
+        lst_notnull.append(item)
+    if len(lst_notnull) == 1:
+        print('Good')
+    else:
+        if item > max_value:
+            max_value = item
 
-    unique_type = types_list[0]
-    types_list = [t for t in types_list if t == unique_type]
-    print("Після видалення відмінного типу:", types_list)
+max_value = max(lst_count_types)
+inn = lst_count_types.index(max_value)
+print(lst_name_type[inn])
+for item in lst:
+    if type(item) !=lst_name_type[inn]:
+        lst.remove(item)
