@@ -31,3 +31,5 @@ print(student.get_fullname_list())        # ["Vika", "Tykhonchuk"]
 default_student = Vika()
 print(default_student.calculate_course())  # "Рік народження не вказано"
 print(default_student.get_fullname_list()) # [None, None]
+
+#Лябук Тарас КРАСАВЧИК P.S. Артем Пуцак 27.05.2025 15:15
