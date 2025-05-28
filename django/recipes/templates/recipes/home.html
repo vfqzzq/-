@@ -1,0 +1,12 @@
+{% extends 'recipes/base.html' %}
+
+{% block title %}{{ title }} — Мій сайт рецептів{% endblock %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<ul>
+    {% for page in pages %}
+        <li><a href="{% url page.url %}">{{ page.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
